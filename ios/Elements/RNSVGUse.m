@@ -41,24 +41,25 @@
     _y = y;
 }
 
-- (void)setWidth:(RNSVGLength *)width
+
+- (void)setUsewidth:(RNSVGLength *)usewidth
 {
-    if ([width isEqualTo:_width]) {
+    if ([usewidth isEqualTo:_usewidth]) {
         return;
     }
 
     [self invalidate];
-    _width = width;
+    _usewidth = usewidth;
 }
 
-- (void)setHeight:(RNSVGLength *)height
+- (void)setUseheight:(RNSVGLength *)useheight
 {
-    if ([height isEqualTo:_height]) {
+    if ([useheight isEqualTo:_useheight]) {
         return;
     }
 
     [self invalidate];
-    _height = height;
+    _useheight = useheight;
 }
 
 - (void)renderLayerTo:(CGContextRef)context rect:(CGRect)rect
@@ -75,7 +76,7 @@
 
         if ([template class] == [RNSVGSymbol class]) {
             RNSVGSymbol *symbol = (RNSVGSymbol*)template;
-            [symbol renderSymbolTo:context width:[self relativeOnWidth:self.width] height:[self relativeOnHeight:self.height]];
+            [symbol renderSymbolTo:context width:[self relativeOnWidth:self.usewidth] height:[self relativeOnHeight:self.useheight]];
         } else {
             [template renderTo:context rect:rect];
         }

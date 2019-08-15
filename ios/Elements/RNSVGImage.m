@@ -67,22 +67,22 @@
     _y = y;
 }
 
-- (void)setWidth:(RNSVGLength *)width
+- (void)setImagewidth:(RNSVGLength *)width
 {
-    if ([width isEqualTo:_width]) {
+    if ([width isEqualTo:_imagewidth]) {
         return;
     }
     [self invalidate];
-    _width = width;
+    _imagewidth = width;
 }
 
-- (void)setHeight:(RNSVGLength *)height
+- (void)setImageheight:(RNSVGLength *)height
 {
-    if ([height isEqualTo:_height]) {
+    if ([height isEqualTo:_imageheight]) {
         return;
     }
     [self invalidate];
-    _height = height;
+    _imageheight = height;
 }
 
 - (void)setAlign:(NSString *)align
@@ -151,8 +151,8 @@
 {
     CGFloat x = [self relativeOnWidth:self.x];
     CGFloat y = -1 * [self relativeOnHeight:self.y];
-    CGFloat width = [self relativeOnWidth:self.width];
-    CGFloat height = [self relativeOnHeight:self.height];
+    CGFloat width = [self relativeOnWidth:self.imagewidth];
+    CGFloat height = [self relativeOnHeight:self.imageheight];
     if (width == 0) {
         width = _imageSize.width;
     }

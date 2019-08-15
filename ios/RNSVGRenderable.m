@@ -176,6 +176,10 @@
     _strokeDashArrayData = nil;
 }
 
+UInt32 saturate(CGFloat value) {
+    return value <= 0 ? 0 : value >= 255 ? 255 : (UInt32)value;
+}
+
 static CGImageRef renderToImage(RNSVGRenderable *object,
                                 CGSize bounds,
                                 CGRect rect,

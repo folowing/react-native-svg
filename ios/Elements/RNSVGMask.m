@@ -28,7 +28,7 @@
     if ([x isEqualTo:_x]) {
         return;
     }
-
+    
     _x = x;
     [self invalidate];
 }
@@ -38,28 +38,28 @@
     if ([y isEqualTo:_y]) {
         return;
     }
-
+    
     _y = y;
     [self invalidate];
 }
 
-- (void)setWidth:(RNSVGLength *)width
+- (void)setMaskwidth:(RNSVGLength *)maskwidth
 {
-    if ([width isEqualTo:_width]) {
+    if ([maskwidth isEqualTo:_maskwidth]) {
         return;
     }
-
-    _width = width;
+    
+    _maskwidth = maskwidth;
     [self invalidate];
 }
 
-- (void)setHeight:(RNSVGLength *)height
+- (void)setMaskheight:(RNSVGLength *)maskheight
 {
-    if ([height isEqualTo:_height]) {
+    if ([maskheight isEqualTo:_maskheight]) {
         return;
     }
-
-    _height = height;
+    
+    _maskheight = maskheight;
     [self invalidate];
 }
 
@@ -68,7 +68,7 @@
     if (maskUnits == _maskUnits) {
         return;
     }
-
+    
     _maskUnits = maskUnits;
     [self invalidate];
 }
@@ -78,7 +78,7 @@
     if (maskContentUnits == _maskContentUnits) {
         return;
     }
-
+    
     _maskContentUnits = maskContentUnits;
     [self invalidate];
 }
