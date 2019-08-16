@@ -101,7 +101,7 @@ export interface ClipProps {
   clipRule?: FillRule,
   clipPath?: string
 }
-  
+
 interface VectorEffectProps {
   vectorEffect?: "none" | "non-scaling-stroke" | "nonScalingStroke" | "default" | "inherit" | "uri";
 }
@@ -250,6 +250,7 @@ export const LinearGradient: React.ComponentClass<LinearGradientProps>;
 export interface PathProps extends CommonPathProps {
   d: string,
   opacity?: NumberProp,
+  filter?: string;
 }
 export const Path: React.ComponentClass<PathProps>;
 
@@ -396,3 +397,32 @@ export interface MaskProps extends CommonPathProps {
   maskContentUnits?: TMaskUnits,
 }
 export const Mask: React.ComponentClass<MaskProps>;
+
+
+export interface FilterProps {
+  id: string;
+  x: number | string;
+  y: number | string,
+  width: number | string,
+  height: number | string,
+  filterUnits?: 'userSpaceOnUse' | 'objectBoundingBox',
+  primitiveUnits?: 'userSpaceOnUse' | 'objectBoundingBox',
+  filterRes?: any,
+}
+
+export const Filter: React.ComponentClass<FilterProps>;
+
+export interface FEGaussianBlurProps {
+  stdDeviation: number | string;
+  in: string;
+  result: string;
+}
+export const FEGaussianBlur: React.ComponentClass<FEGaussianBlurProps>;
+
+export interface FEOffsetProps {
+  dx: number;
+  dy: number;
+  result: string;
+}
+
+export const FEOffset: React.ComponentClass<FEOffsetProps>;
