@@ -245,8 +245,8 @@ static CGImageRef renderToImage(RNSVGRenderable *object,
             RNSVGMask *_maskNode = (RNSVGMask*)[self.svgView getDefinedMask:self.mask];
             CGFloat x = [self relativeOn:[_maskNode x] relative:width];
             CGFloat y = [self relativeOn:[_maskNode y] relative:height];
-            CGFloat w = [self relativeOn:[_maskNode width] relative:width];
-            CGFloat h = [self relativeOn:[_maskNode height] relative:height];
+            CGFloat w = [self relativeOn:[_maskNode maskwidth] relative:width];
+            CGFloat h = [self relativeOn:[_maskNode maskheight] relative:height];
 
             // Clip to mask bounds and render the mask
             CGRect maskBounds = CGRectMake(x, y, w, h);
